@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Sample Access Code Flow OAuth2 Project
-  description: ''
+  description: This section is for overview........
 servers:
   - url: 'https://test/apexrest'
     description: Mock Server
