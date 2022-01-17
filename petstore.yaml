@@ -1,0 +1,131 @@
+---
+openapi: 3.0.0
+info:
+  title: User Management
+  description: |
+    
+  version: 1.0.0
+servers:
+- url: https://test
+  description: Dev server
+paths:
+  /services/data/{version}/subjects/user/{id}:
+    get:
+      tags:
+      - User Management
+      summary: View User Preferences
+      description: Specify the fields you want to retrieve in the fields parameter and use the GET method of the resource. Refer Refer  <a href="https://bp365.sharepoint.com/sites/IdentityAccessManagementIAMHub/SitePages/End-Points.aspx">here</a> for latest version number of these API's
+      parameters:
+      - name: version
+        in: path
+        description: Version Number
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: id
+        in: path
+        description: 18 Digit Alphanumeric Unique Identifier of the User to limit references in the backend.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: fields
+        in: query
+        description: Different fields names
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/View'
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - User Management
+      summary: Update User Preferences
+      description: Specify the fields you want to update within the body of the request and use the PATCH method of the resource. Refer  <a href="https://bp365.sharepoint.com/sites/IdentityAccessManagementIAMHub/SitePages/Consumer_Idp_Service.aspx#service-end-points">Customer & Consumer Identity</a> for latest version number of these API's
+      parameters:
+      - name: version
+        in: path
+        description: Version Number
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: id
+        in: path
+        description: 18 Digit Alphanumeric Unique Identifier of the User to limit references in the backend.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserPreferences'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateUserPreferences'
+      responses:
+        "200":
+          description: Successful response
+          content: {}
+      security:
+      - Bearer: []
+components:
+  schemas:
+    View:
+      title: View User Consent
+      type: object
+      properties:
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/attributes'
+        FirstName:
+          type: string
+          example: John
+        Email:
+          type: string
+          example: john.smith@example.com
+        Phone:
+          type: integer
+          example: 15417543010
+    UpdateUserPreferences:
+      title: Update User Preferences
+      type: object
+      properties:
+        Phone:
+          type: integer
+          example: 15417543010
+    attributes:
+      title: attribute
+      type: object
+      properties:
+        type:
+          type: string
+          example: User
+        url:
+          type: string
+          example: /services/data/v48.0/sobjects/User/0050E000000RlEQQA0
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
