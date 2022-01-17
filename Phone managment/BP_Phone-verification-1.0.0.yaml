@@ -1,0 +1,112 @@
+openapi: 3.0.0
+info:
+  title: Sample Access Code Flow OAuth2 Project
+  description: ''
+servers:
+  - url: 'https://test/apexrest'
+    description: Mock Server
+paths:
+  /phoneVerification:
+    put:
+      tags:
+        - Phone Verification
+      summary: Check Method
+      description: This WebService accepts PUT requests with a JSON body and below parameters that are wrapped in reqData object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/checkmethod'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/view'
+      security:
+        - Bearer: []
+    post:
+      tags:
+        - Phone Verification
+      summary: Start Method
+      description: This WebService accepts POST requests with a JSON body and below parameters that are wrapped in reqData object.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/startmethod'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/view'
+      security:
+        - Bearer: []
+components:
+  schemas:
+    view:
+      title: Response
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: Text message sent to +1 123-456-7890
+    startmethod:
+      title: Start Method
+      type: object
+      properties:
+        reqData:
+          type: array
+          items:
+            $ref: '#/components/schemas/attributes'
+      x-examples:
+        example-1: {}
+      description: ''
+    checkmethod:
+      title: Check Method
+      type: object
+      properties:
+        reqData:
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/attributes'
+              - required:
+                  - code
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: Verification Code
+                    example: 123
+    attributes:
+      title: reqData
+      required:
+        - countryCode
+        - phoneNumber
+        - sid
+      type: object
+      properties:
+        phoneNumber:
+          type: integer
+          description: Phone Number
+          example: 1234567890
+        countryCode:
+          type: boolean
+          description: Country Code
+          example: false
+        sid:
+          type: string
+          description: Will be provided to you once Twillio account is set up.
+          example: bpmeusa
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
