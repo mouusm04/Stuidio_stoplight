@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: User Management
-  description: ''
+  description: This section is for User management overview or any other overview
   version: 1.0.0
 servers:
   - url: 'https://test'
