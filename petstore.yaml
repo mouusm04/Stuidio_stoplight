@@ -101,6 +101,7 @@ components:
         FirstName:
           type: string
           example: John
+          description: first name of the customer
         Email:
           type: string
           example: john.smith@example.com
