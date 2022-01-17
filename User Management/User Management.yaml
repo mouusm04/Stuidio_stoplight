@@ -12,7 +12,7 @@ paths:
       tags:
         - User Management
       summary: View User Preferences
-      description: "Specify the fields you want to retrieve in the fields parameter and use the GET method of the resource. Refer Refer  <a href=\"https://bp365.sharepoint.com/sites/IdentityAccessManagementIAMHub/SitePages/End-Points.aspx\">here</a> for latest version number of these API's"
+      description: Specify the fields you want to retrieve in the fields parameter and use the GET method of the resource.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       parameters:
         - name: version
           in: path
