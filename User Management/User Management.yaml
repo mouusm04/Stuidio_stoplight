@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: User Management
-  description: ''
+  description: This section is for User management overview or any other overview
   version: 1.0.0
 servers:
   - url: 'https://test'
@@ -12,7 +12,7 @@ paths:
       tags:
         - User Management
       summary: View User Preferences
-      description: "Specify the fields you want to retrieve in the fields parameter and use the GET method of the resource. Refer Refer  <a href=\"https://bp365.sharepoint.com/sites/IdentityAccessManagementIAMHub/SitePages/End-Points.aspx\">here</a> for latest version number of these API's"
+      description: Specify the fields you want to retrieve in the fields parameter and use the GET method of the resource.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       parameters:
         - name: version
           in: path
