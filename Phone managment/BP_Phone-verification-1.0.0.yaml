@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Sample Access Code Flow OAuth2 Project
-  description: This section is for overview of each API
+  description: testing for Description
 servers:
   - url: 'https://test/apexrest'
     description: Mock Server
@@ -30,7 +30,10 @@ paths:
       tags:
         - Phone Verification
       summary: Start Method
-      description: This WebService accepts POST requests with a JSON body and below parameters that are wrapped in reqData object.
+      description: |-
+        This WebService accepts POST requests with a JSON body and below parameters that are wrapped in reqData object.
+        1. Testing
+        2. Testing
       requestBody:
         content:
           application/json:
@@ -87,15 +90,12 @@ components:
                     example: 123
     attributes:
       title: reqData
-      required:
-        - countryCode
-        - phoneNumber
-        - sid
       type: object
+      description: ''
       properties:
         phoneNumber:
           type: integer
-          description: Phone Number
+          description: Phone Number_testing
           example: 1234567890
         countryCode:
           type: boolean
@@ -105,6 +105,10 @@ components:
           type: string
           description: Will be provided to you once Twillio account is set up.
           example: bpmeusa
+      required:
+        - phoneNumber
+        - countryCode
+        - sid
   securitySchemes:
     Bearer:
       type: apiKey
