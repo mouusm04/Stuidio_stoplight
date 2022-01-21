@@ -1,7 +1,13 @@
 openapi: 3.0.0
 info:
   title: User Management
-  description: This section is for User management overview or any other overview
+  description: |-
+    This is all about User Management API
+
+    | Syntax      | Description |
+    | ----------- | ----------- |
+    | Header      | Title       |
+    | Paragraph   | Text        |
   version: 1.0.0
 servers:
   - url: 'https://test'
@@ -12,7 +18,13 @@ paths:
       tags:
         - User Management
       summary: View User Preferences
-      description: Specify the fields you want to retrieve in the fields parameter and use the GET method of the resource.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      description: |-
+        This is all about User Management API
+
+        | Name        | Description |
+        | ----------- | ----------- |
+        | Header      | Title       |
+        | Paragraph   | Text        |
       parameters:
         - name: version
           in: path
@@ -52,6 +64,7 @@ paths:
                 $ref: '#/components/schemas/View'
       security:
         - Bearer: []
+      operationId: ''
     patch:
       tags:
         - User Management
