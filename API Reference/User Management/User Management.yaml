@@ -25,6 +25,8 @@ paths:
         | ----------- | ----------- |
         | Header      | Title       |
         | Paragraph   | Text        |
+
+        User management describes the ability for administrators to manage user access to various IT resources like systems, devices, applications, storage systems, networks, SaaS services, and more. ... User management enables admins to control user access and on-board and off-board users to and from IT resources
       parameters:
         - name: version
           in: path
@@ -128,6 +130,7 @@ components:
         Phone:
           type: integer
           example: 15417543010
+      description: 'User management describes the ability for administrators to manage user access to various IT resources like systems, devices, applications, storage systems, networks, SaaS services, and more. ... User management enables admins to control user access and on-board and off-board users to and from IT resources'
     attributes:
       title: attribute
       type: object
@@ -139,6 +142,7 @@ components:
             url
       x-examples:
         example-1: {}
+      description: 'User management describes the ability for administrators to manage user access to various IT resources like systems, devices, applications, storage systems, networks, SaaS services, and more. ... User management enables admins to control user access and on-board and off-board users to and from IT resources'
   securitySchemes:
     Bearer:
       type: apiKey
