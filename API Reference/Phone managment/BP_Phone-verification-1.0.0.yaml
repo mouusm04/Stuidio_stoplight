@@ -1,38 +1,12 @@
 openapi: 3.0.0
 info:
   title: Sample Access Code Flow OAuth2 Project
-  description: |+
-
-
-    KM Metadata Services
-
-    API Documentation
-
-    Version 1.0.0
-
-    14 January 2022
-
-    # Proprietary Rights
-
-    The information contained in this document is proprietary and confidential to
-    BlackSwan Technologies This material may not be duplicated, published, or
-    disclosed, in whole or in part, without the prior written permission of
-    BlackSwan Technologies.
-
-    # Summary of Changes** **
-
-    | **Version** | **Description** |
-    |-------------|-----------------|
-    | 1.0.0       | Initial Draft   |
-
-    # Table of Contents
-
-
-
-
+  description: ''
+  version: "1.0.0"
 servers:
   - url: 'https://test/apexrest'
     description: Mock Server
+    
 paths:
   /phoneVerification:
     put:
@@ -58,17 +32,12 @@ paths:
       tags:
         - Phone Verification
       summary: Start Method
-      description: |-
-        This WebService accepts POST requests with a JSON body and below parameters that are wrapped in reqData object.
-        1. Testing
-        2. Testing
-        3. testing
+      description: This WebService accepts POST requests with a JSON body and below parameters that are wrapped in reqData object.
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/startmethod'
-        description: ''
       responses:
         '200':
           description: Successful response
@@ -120,12 +89,15 @@ components:
                     example: 123
     attributes:
       title: reqData
+      required:
+        - countryCode
+        - phoneNumber
+        - sid
       type: object
-      description: 'This module allows you to manage users, groups, and roles defined in the default security realm. You must be logged in as a member of the Administrators or ...'
       properties:
         phoneNumber:
           type: integer
-          description: Phone Number_testing
+          description: Phone Number
           example: 1234567890
         countryCode:
           type: boolean
@@ -135,10 +107,6 @@ components:
           type: string
           description: Will be provided to you once Twillio account is set up.
           example: bpmeusa
-      required:
-        - phoneNumber
-        - countryCode
-        - sid
   securitySchemes:
     Bearer:
       type: apiKey
