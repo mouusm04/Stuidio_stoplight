@@ -1,12 +1,16 @@
 openapi: 3.0.0
 info:
   title: Sample Access Code Flow OAuth2 Project
-  description: ''
-  version: "1.0.0"
+  description: |-
+    BlackSwan Technologies’ ELEMENT™ software is the foundation for building next generation robust AI applications – delivering a powerful set of cognitive computing capabilities that help financial institutions and other data-driven organisations.
+    | Syntax      | Description |
+    | ----------- | ----------- |
+    | Header      | Title       |
+    | Paragraph   | Text        |
+  version: 1.0.0
 servers:
   - url: 'https://test/apexrest'
     description: Mock Server
-    
 paths:
   /phoneVerification:
     put:
@@ -32,7 +36,12 @@ paths:
       tags:
         - Phone Verification
       summary: Start Method
-      description: This WebService accepts POST requests with a JSON body and below parameters that are wrapped in reqData object.
+      description: |-
+        This WebService accepts POST requests with a JSON body and below parameters that are wrapped in reqData object. BlackSwan Technologies’ ELEMENT™ software is the foundation for building next generation robust AI applications – delivering a powerful set of cognitive computing capabilities that help financial institutions and other data-driven organisations.
+        | Syntax      | Description |
+        | ----------- | ----------- |
+        | Header      | Title       |
+        | Paragraph   | Text        |
       requestBody:
         content:
           application/json:
