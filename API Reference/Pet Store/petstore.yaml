@@ -3,9 +3,7 @@ info:
   title: User Management
   description: This section is for User management overview or any other overview
   version: 1.0.0
-servers:
-  - url: 'https://test'
-    description: Dev server
+servers: []
 paths:
   '/services/data/{version}/subjects/user/{id}':
     get:
@@ -50,8 +48,7 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/View'
-      security:
-        - Bearer: []
+      security: []
     patch:
       tags:
         - User Management
@@ -86,8 +83,7 @@ paths:
         '200':
           description: Successful response
           content: {}
-      security:
-        - Bearer: []
+      security: []
 components:
   schemas:
     View:
@@ -126,8 +122,4 @@ components:
             url
       x-examples:
         example-1: {}
-  securitySchemes:
-    Bearer:
-      type: apiKey
-      name: Authorization
-      in: header
+  securitySchemes: {}
