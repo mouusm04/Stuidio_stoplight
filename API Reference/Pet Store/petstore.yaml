@@ -3,9 +3,11 @@ info:
   title: User Management
   description: This section is for User management overview or any other overview
   version: 1.0.0
-servers: []
+servers:
+  - url: ''
+    description: ''
 paths:
-  '/services/data/{version}/subjects/user/{id}':
+  /services/data/:
     get:
       tags:
         - User Management
@@ -84,6 +86,7 @@ paths:
           description: Successful response
           content: {}
       security: []
+    parameters: []
 components:
   schemas:
     View:
