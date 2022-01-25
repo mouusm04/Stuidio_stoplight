@@ -4,7 +4,7 @@ info:
   description: This section is for User management overview or any other overview
   version: 1.0.0
 servers:
-  - url: ''
+  - url: 'https://test/apexrest'
     description: ''
 paths:
   /services/data/:
